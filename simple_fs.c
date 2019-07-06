@@ -6,7 +6,6 @@
 
 #define MAX_FILE_NAME_LENGTH 12
 #define MAX_FD 100
-
 #define MAX 30000
 #define MIN 10000
 
@@ -51,6 +50,9 @@ int main(void){
         }
      }
    }
+  
+   printf("Five files created with zero length:\n");
+   sfs_ls();
 }
 
 
