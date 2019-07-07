@@ -52,3 +52,23 @@ int sfs_open(char * name){
          
     return fileID;     
 }
+
+int sfs_close(int fileID){
+    
+    if(open_files <= fileID){
+          fprintf(stderr, "Error: file %d does not exist.", fileID);
+          return -1;   
+    }
+         
+    root.table[fileID].fas.opened = 0;
+    open_files--;
+    return 0;
+}
+
+int sfs_write(){
+         
+}
+
+int sfs_read(){
+         
+}
