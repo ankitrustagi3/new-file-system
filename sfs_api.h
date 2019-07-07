@@ -1,5 +1,9 @@
+#ifndef SFS_API_H
+#define SFS_API_H
+
 #include "disk_emu.h"
 #include "sfs_header.h"
+#include "sfs_utils.h"
 
 DirectoryDescriptor root;
 FileAllocationTable fat;
@@ -97,3 +101,5 @@ int sfs_read(int fileID, char * buf, int length){
     buf = FAT_getPartFile(root.table[fileID], fat, length);
     return EOF;     
 }
+
+#endif
