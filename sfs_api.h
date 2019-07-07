@@ -24,7 +24,6 @@ void makefhs(int fresh){
 }
 
 void sfs_ls(){
-    
     printf("\n");
     
     for(int i = 0; i < MAX_FILE; i++){
@@ -65,10 +64,36 @@ int sfs_close(int fileID){
     return 0;
 }
 
-int sfs_write(){
+int sfs_write(int fileID, char * buf, int length){
+    if(open_files <= fileID){
+         fprintf(stderr, "Error: File #%d does not exist. \n", fileID);
+         return 0;
+    }
          
+    int address = 2;
+    
+    for(int i = 0; i < length; i++){
+         if(address != -1){
+              write_blocks(address, 1, (void *) &buf[i]);
+              root.table[fileID].size++;
+         }
+         else {
+              fprintf(stderr, "Error: The disk is already full.\n");
+              break;
+         }
+    }
+    
+    write_blocks(0, 1, (void *) &root);
+    write_blocks(1, 1, (void *) &fat)
+         
+    return root.table[fileID].size;
 }
 
-int sfs_read(){
-         
+int sfs_read(int fileID, char * buf, int length){
+    if(open_files <= fileID && root.table[fileID].fas.opened == 0){
+            fprintf(stderr, "No such file %d is opened/n", fileID);
+            return 0;
+    }
+    buf = FAT_getPartFile(root.table[fileID], fat, length);
+    return EOF;     
 }
