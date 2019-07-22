@@ -7,7 +7,7 @@
 
 DirectoryDescriptor root;
 FileAllocationTable fat;
-#Hello There
+#Hello 
 static int open_files = 0;
 
 void makefhs(int fresh){
