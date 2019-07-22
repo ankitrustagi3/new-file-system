@@ -11,23 +11,23 @@
 
 char *rand_name(){
   char fname[MAX_FILE_NAME_LENGTH];
-  
+
   for(int counter = 0; counter < MAX_FILE_NAME_LENGTH; counter++){
     if(counter != 8) fname[counter] = 'A' + (rand() % 26)
     else fname[counter] = '.'
   }
-  
+
   fname[counter] = '\0';
   return (strdup(fname));
 }
 
 int main(void){
    int i, j, k;
-   
+
    int errorCount = 0;
-   
+
    makefs(1);
-   
+
    for(i = 0; i < 5; i++){
       names[i] = rand_name();
       fds[i] = sfs_open(names[i]);
@@ -42,7 +42,7 @@ int main(void){
       }
       filesize[i] = (rand() % (MAX - MIN)) + MIN;
    }
-  
+
    for(i = 0; i < 5; i++){
      for(j = i + 1; j < 2; j++){
         if(fds[i] == fds[j]){
@@ -50,9 +50,7 @@ int main(void){
         }
      }
    }
-  
+
    printf("Five files created with zero length:\n");
    sfs_ls();
 }
-
-
