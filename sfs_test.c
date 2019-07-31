@@ -18,13 +18,13 @@ char * rand_name(){
       fname[i] = 'A' + (rand() % 26);
     }
     else {
-      fname[i] = '.'
+      fname[i] = '.';
     }
   }
   fname[i] = '\0';
   return (strdup(fname));
 }
-  
+
 int main(){
   int i, j, k;
   int chunksize;
@@ -37,7 +37,7 @@ int main(){
 
   mksfs(1);
 
-  for(i = 0; i < MAX_FILE; i++){
+  for(i = 0; i < MAX_FILE_NAME_LENGTH; i++){
     names[i] = rand_name();
     fds[i] = sfs_open(names[i]);
     if(fds[i] < 0){
