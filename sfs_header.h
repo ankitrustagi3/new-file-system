@@ -27,6 +27,7 @@ typedef struct FileDescriptor {
 	int fat_index;
 	time_t timestamp;
 	int size;
+  FileAccessStatus fas;
 } FileDescriptor;
 
 typedef struct DirectoryDescriptor {
