@@ -24,5 +24,5 @@ void FileDescriptor_createFiles(char * name, FileDescriptor file){
 void VirtualDisk_write(int address, void * buff,int length){
   char * string = (char *) buff;
   vd[address][length] = '\0';
-  strcpy(string, vd[address], length);
+  strncpy(string, vd[address], length);
 }

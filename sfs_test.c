@@ -24,7 +24,7 @@ char * rand_name(){
   fname[i] = '\0';
   return (strdup(fname));
 }
-
+  
 int main(){
   int i, j, k;
   int chunksize;
