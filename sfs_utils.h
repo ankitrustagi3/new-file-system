@@ -26,3 +26,5 @@ void VirtualDisk_write(int address, void * buff,int length){
   vd[address][length] = '\0';
   strncpy(string, vd[address], length);
 }
+
+#endif
