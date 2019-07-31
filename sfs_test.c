@@ -15,7 +15,7 @@ char * rand_name(){
 
   for(i = 0; i < MAX_FILE_NAME_LENGTH; i++){
     if(i != 8){
-      fname[i] = 'A' + (rand % 26);
+      fname[i] = 'A' + (rand() % 26);
     }
     else {
       fname[i] = '.'
@@ -31,7 +31,7 @@ int main(){
   char * buffer;
   int fds[MAX_FD];
   char * names[MAX_FD];
-  int filesize[MAX_FD];
+  int filename[MAX_FD];
   int error_count = 0;
   int tmp;
 
