@@ -60,7 +60,7 @@ int main(){
         chunksize = filename[i] - j;
       }
       else {
-        chunksize = (rand() % (filesize[i] - j)) + 1;
+        chunksize = (rand() % (filename[i] - j)) + 1;
       }
       if((buffer = malloc(chunksize)) == NULL){
         exit(-1);
