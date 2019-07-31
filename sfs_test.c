@@ -25,6 +25,12 @@ char * rand_name(){
   return (strdup(fname));
 }
 
+void makefs(int);
+void sfs_ls();
+int sfs_open();
+int sfs_close();
+int sfs_read();
+int sfs_write();
 int main(){
   int i, j, k;
   int chunksize;

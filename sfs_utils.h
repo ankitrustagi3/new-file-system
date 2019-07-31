@@ -19,7 +19,7 @@ void DirectoryDescriptor_init(DirectoryDescriptor * root){
   }
 }
 
-void FileDescriptor_createFiles(char * name, FileDescriptor file){
+void FileDescriptor_createFiles(char * name, FileDescriptor * file){
   strcpy(file->filename, name);
   file->fas.opened = 1;
   file->fas.rd_ptr = 0;

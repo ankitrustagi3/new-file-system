@@ -56,7 +56,7 @@ typedef union DiskBlock {
 	freeblocklist fbl;
 } DiskBlock;
 
-void mksfs(int fresh);
+void makefs(int fresh);
 void sfs_ls();
 int sfs_open(char * name);
 int sfs_close(int fileID);
