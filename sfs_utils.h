@@ -12,6 +12,13 @@ int FAT_getFreeNode(){
 
 }
 
+void DirectoryDescriptor_init(DirectoryDescriptor * root){
+  int i;
+  for(i = 0; i < MAX_FILE_NAME_LENGTH; i++){
+    root->table[i].size = EMPTY;
+  }
+}
+
 void FileDescriptor_createFiles(char * name, FileDescriptor file){
   strcpy(file->filename, name);
   file->fas.opened = 1;
