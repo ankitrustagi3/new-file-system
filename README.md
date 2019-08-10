@@ -2,6 +2,7 @@
 This project is oriented around creating a VSFS (Very Simple File System). The simple functions that are included in this repository are:
 
 **sfs_write()**
+The function is responsible for writing into the file that are in the file system. 
 
 **sfs_read()**
 
