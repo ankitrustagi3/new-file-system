@@ -1,7 +1,7 @@
 #ifndef
 	#define min(a, b) (((a) < (b)) ? (a) : (b))
 #endif
-
+ 
 #ifndef SFS_API_HEADER
 #define SFS_API_HEADER
 
